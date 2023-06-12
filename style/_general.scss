@@ -1,0 +1,247 @@
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+	overflow-y: scroll;
+
+	&.pause {
+		overflow-y: hidden;
+	}
+}
+* {
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: $font-color;
+	overflow-x: hidden;
+}
+
+// General
+body {
+	background-color: $darkblack;
+	font-family: "Inter";
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+	line-height: 140%;
+	background-repeat: no-repeat;
+
+	&.modal-open {
+		overflow-y: hidden !important;
+	}
+}
+
+main {
+	// padding: 0 1.5rem;
+	background-image: url("../assets/banner.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	// padding-top: 10rem;
+	overflow-x: hidden;
+	@media (min-width: $small-screen) {
+		background-position: top right;
+		background-image: url("../assets/desktop_banner.svg");
+		background-size: 150%;
+	}
+	@media (min-width: $medium-screen) {
+		background-size: 130%;
+	}
+	@media (min-width: $large-screen) {
+		// background-image: url("../assets/desktop_banner.svg");
+		background-position: top right;
+		background-size: 105%;
+		// padding-top: 15rem;
+	}
+}
+
+section {
+	padding: 0 1.5rem;
+	@media (min-width: $large-screen) {
+		padding: 0 5rem;
+	}
+}
+
+div.subsection {
+	padding: 0 1.5rem;
+	@media (min-width: $large-screen) {
+		padding: 0;
+	}
+}
+
+.image {
+	width: 100%;
+	text-align: center;
+}
+
+ul {
+	list-style: none;
+	margin-bottom: 0;
+	padding-left: 0;
+}
+
+h1 {
+	font-weight: 400;
+	font-size: 2.25rem;
+	margin-bottom: 2.5rem;
+	line-height: 140%;
+	@media (min-width: $large-screen) {
+		font-size: 4rem;
+	}
+}
+
+h2 {
+	font-weight: 400;
+	line-height: 140%;
+	font-size: 1.875rem;
+	@media (min-width: $large-screen) {
+		font-size: 2rem;
+	}
+}
+
+h3 {
+	font-weight: 400;
+	font-size: 0.875rem;
+	margin-bottom: 1rem;
+	text-transform: uppercase;
+}
+
+h4 {
+	color: $pink;
+	font-weight: 400;
+	font-size: 2rem;
+	text-transform: uppercase;
+	margin-bottom: 0.5rem;
+}
+
+h5 {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+h6 {
+	font-family: "Poppins";
+	line-height: 140%;
+	font-weight: 600;
+	margin-bottom: 1rem;
+}
+
+p {
+	font-family: "Poppins";
+	font-weight: 300;
+	margin-top: 1rem;
+	margin-bottom: 0;
+}
+
+a {
+	text-decoration: none;
+	&:hover {
+		color: inherit;
+	}
+}
+
+// BODY
+// Scrollbar
+::-webkit-scrollbar {
+	width: 0.5rem;
+	z-index: 20000;
+}
+::-webkit-scrollbar-track {
+	background-color: $scroll-bg;
+}
+::-webkit-scrollbar-thumb {
+	background-color: $scroll-thumb-bg;
+	border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: $scroll-hover-thumb-bg;
+}
+
+::-webkit-scrollbar-thumb:active {
+	background-color: $scroll-thumb-bg;
+}
+
+// Common elements
+.blue-gradient {
+	font-weight: 700;
+	background-color: $darkblack;
+	background-image: $main-gradient;
+	background-size: 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+}
+.pink {
+	font-weight: 700;
+	color: $pink;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+
+	padding: 0.75rem 2rem;
+	margin-bottom: 1.5rem;
+	width: 100%;
+	max-width: 800px;
+
+	font-family: Poppins;
+	font-weight: 300;
+	color: $font-color;
+
+	background: $main-gradient;
+	border: none;
+	border-radius: 60px;
+	transition: 0.3s;
+
+	cursor: pointer;
+
+	&:hover {
+		filter: brightness(1.2);
+	}
+
+	&.outline {
+		transition: 0.4s;
+		border-radius: 60px;
+		border: solid 2px transparent;
+		background-image: linear-gradient(transparent, transparent), $main-gradient;
+		background-origin: border-box;
+		background-clip: content-box, border-box;
+		box-shadow: 1px 1000px 1px $darkblack inset;
+		span {
+			transition: 0.2s;
+			color: transparent;
+			background-image: $main-gradient;
+			background-size: 100%;
+			-webkit-background-clip: text;
+			-moz-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			-moz-text-fill-color: transparent;
+		}
+		&:hover {
+			box-shadow: none;
+			span {
+				filter: brightness(5);
+			}
+		}
+	}
+
+	@media (min-width: $large-screen) {
+		width: 10.125rem;
+		.button-container {
+			width: 50%;
+		}
+	}
+}
+
+.padding-zero {
+	padding: 0;
+}
+
+.icon {
+	overflow: initial;
+}

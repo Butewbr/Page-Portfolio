@@ -1,0 +1,50 @@
+// MODAL
+#modais {
+	button.btn-close.btn-close-white {
+		transition: 0.3s;
+		&:hover {
+			opacity: 1;
+		}
+	}
+	.modal-content {
+		border-radius: 16px;
+		background: $darkblack;
+		.modal-header {
+			border-bottom: none;
+		}
+		p {
+			margin-bottom: 1.5rem;
+			font-family: Poppins;
+			font-size: 1rem;
+		}
+		.image {
+			border-radius: 1.5rem;
+			overflow: hidden;
+			max-height: 595px;
+			img {
+				border-radius: 1.5rem;
+			}
+		}
+	}
+	@media (min-width: $large-screen) {
+		button.btn-close.btn-close-white {
+			background-size: 35%;
+		}
+		.modal-dialog {
+			max-width: 1000px;
+			width: 70vw;
+			.modal-content {
+                
+                .modal-body {
+					padding: 0 3.375rem;
+                    padding-bottom: 3.375rem;
+					.image {
+						img {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
